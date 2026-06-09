@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { createBrowserClient } from '@supabase/auth-helpers-react';
+import { supabase } from '../../lib/supabaseClient';
 import { AdminMenu } from '../../components/AdminMenu';
 
 type OrderItem = { id: string; name: string; quantity: number; notes: string | null; price: number };
@@ -10,8 +10,7 @@ type Order = { id: string; created_at: string; status: string; table_id: string 
 const statusOrder = ['received', 'preparing', 'ready', 'served'];
 
 export default function KitchenPage() {
-  const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-  const [orders, setOrders] = useState<Order[]>([]);
+    const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
 
   const loadOrders = async () => {

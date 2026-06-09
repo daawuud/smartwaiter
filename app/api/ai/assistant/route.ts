@@ -3,10 +3,13 @@ import { OpenAI } from 'openai';
 import { getSupabaseServer } from '../../../../lib/supabaseServer';
 import { buildAssistantPrompt } from '../../../../lib/aiPrompt';
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 export async function POST(request: NextRequest) {
   const body = await request.json();
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json({ answer: 'The AI assistant is not configured.', error: 'Missing OPENAI_API_KEY' }, { status: 500 });
+  }
+  const client = new OpenAI({ apiKey });
   const question = body.question || '';
   const tableId = body.table_id || null;
 

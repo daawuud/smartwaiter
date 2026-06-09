@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createBrowserClient } from '@supabase/auth-helpers-react';
+import { supabase } from '../../../lib/supabaseClient';
 import { MenuCategory, MenuItem, OrderItem } from '../../../lib/types';
 
 type TableInfo = { label: string; qr_code: string | null };
@@ -16,8 +16,7 @@ type OrderRequest = {
 
 export default function TableOrderPage({ params }: { params: { tableId: string } }) {
   const router = useRouter();
-  const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-  const { tableId } = params;
+    const { tableId } = params;
   const [table, setTable] = useState<TableInfo | null>(null);
   const [categories, setCategories] = useState<MenuCategory[]>([]);
   const [items, setItems] = useState<MenuItem[]>([]);

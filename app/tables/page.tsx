@@ -1,14 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { createBrowserClient } from '@supabase/auth-helpers-react';
+import { supabase } from '../../lib/supabaseClient';
 import { AdminMenu } from '../../components/AdminMenu';
 
 type TableRecord = { id: string; label: string; qr_code: string | null; is_active: boolean };
 
 export default function TablesPage() {
-  const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-  const [tables, setTables] = useState<TableRecord[]>([]);
+    const [tables, setTables] = useState<TableRecord[]>([]);
   const [label, setLabel] = useState('');
   const [loading, setLoading] = useState(true);
 

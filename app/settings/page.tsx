@@ -1,12 +1,11 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { createBrowserClient } from '@supabase/auth-helpers-react';
+import { supabase } from '../../lib/supabaseClient';
 import { AdminMenu } from '../../components/AdminMenu';
 
 export default function SettingsPage() {
-  const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-  const [restaurant, setRestaurant] = useState({ name: '', currency: 'USD', timezone: 'UTC', logo_url: '' } as any);
+    const [restaurant, setRestaurant] = useState({ name: '', currency: 'USD', timezone: 'UTC', logo_url: '' } as any);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState('');
   const fileRef = useRef<HTMLInputElement | null>(null);

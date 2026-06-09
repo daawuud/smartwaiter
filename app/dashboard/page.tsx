@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { createBrowserClient } from '@supabase/auth-helpers-react';
+import { supabase } from '../../lib/supabaseClient';
 import { AdminMenu } from '../../components/AdminMenu';
 
 export default function DashboardPage() {
-  const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-  const [summary, setSummary] = useState({ categories: 0, items: 0, tables: 0, orders: 0 });
+    const [summary, setSummary] = useState({ categories: 0, items: 0, tables: 0, orders: 0 });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

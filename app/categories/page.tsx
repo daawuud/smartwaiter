@@ -1,14 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { createBrowserClient } from '@supabase/auth-helpers-react';
+import { supabase } from '../../lib/supabaseClient';
 import { AdminMenu } from '../../components/AdminMenu';
 
 type Category = { id: string; name: string; sort_order: number };
 
 export default function CategoriesPage() {
-  const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-  const [categories, setCategories] = useState<Category[]>([]);
+    const [categories, setCategories] = useState<Category[]>([]);
   const [name, setName] = useState('');
   const [order, setOrder] = useState(0);
   const [loading, setLoading] = useState(true);

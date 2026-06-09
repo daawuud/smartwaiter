@@ -1,12 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { createBrowserClient } from '@supabase/auth-helpers-react';
+import { supabase } from '../../lib/supabaseClient';
 import { AdminMenu } from '../../components/AdminMenu';
 
 export default function ReportPage() {
-  const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-  const [stats, setStats] = useState({ totalOrders: 0, totalRevenue: 0, activeOrders: 0, readyOrders: 0 });
+    const [stats, setStats] = useState({ totalOrders: 0, totalRevenue: 0, activeOrders: 0, readyOrders: 0 });
   const [loading, setLoading] = useState(true);
 
   const loadReport = async () => {

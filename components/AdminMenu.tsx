@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { createBrowserClient } from '@supabase/auth-helpers-react';
+import { supabase } from '../lib/supabaseClient';
 import { useRouter } from 'next/navigation';
 
 const links = [
@@ -15,9 +15,7 @@ const links = [
 
 export function AdminMenu() {
   const router = useRouter();
-  const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
-
-  const handleSignOut = async () => {
+    const handleSignOut = async () => {
     await supabase.auth.signOut();
     router.push('/login');
   };
