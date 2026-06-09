@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { createBrowserClient } from '@supabase/auth-helpers-nextjs';
+import { createBrowserClient } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/navigation';
 
 const links = [

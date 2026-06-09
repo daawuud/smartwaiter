@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { createBrowserClient } from '@supabase/auth-helpers-nextjs';
+import { createBrowserClient } from '@supabase/auth-helpers-react';
 import { AdminMenu } from '../../components/AdminMenu';
 
 type Category = { id: string; name: string; sort_order: number };

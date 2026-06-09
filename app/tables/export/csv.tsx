@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createBrowserClient } from "@supabase/auth-helpers-nextjs";
+import { createBrowserClient } from "@supabase/auth-helpers-react";
 
 type TableRecord = { id: string; label: string; qr_code: string | null; is_active: boolean };
 

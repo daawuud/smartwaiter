@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createBrowserClient } from '@supabase/auth-helpers-nextjs';
+import { createBrowserClient } from '@supabase/auth-helpers-react';
 import { MenuCategory, MenuItem, OrderItem } from '../../../lib/types';
 
 type TableInfo = { label: string; qr_code: string | null };
