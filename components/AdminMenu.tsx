@@ -8,6 +8,7 @@ const links = [
   { href: '/dashboard', label: 'Overview' },
   { href: '/categories', label: 'Categories' },
   { href: '/items', label: 'Menu items' },
+  { href: '/items/import', label: 'Import items' },
   { href: '/tables', label: 'Tables' },
   { href: '/tables/qr', label: 'QR export' },
   { href: '/tables/export/csv', label: 'CSV export' },

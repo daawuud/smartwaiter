@@ -1,0 +1,7 @@
+category_name,name,description,ingredients,spice_level,price,image_url,is_available,is_sold_out
+Starters,Garlic Bread,"Toasted Italian bread brushed with garlic butter and herbs.","Bread, garlic, butter, parsley",Mild,4.50,https://example.com/images/garlic-bread.jpg,true,false
+Starters,Spicy Wings,"Crispy chicken wings tossed in house hot sauce and served with ranch.","Chicken wings, hot sauce, butter, ranch",Hot,9.75,https://example.com/images/spicy-wings.jpg,true,false
+Mains,Classic Burger,"Grilled beef patty with cheese, lettuce, tomato, onion, and house sauce.","Beef patty, cheese, lettuce, tomato, onion, sauce",Regular,12.50,https://example.com/images/classic-burger.jpg,true,false
+Mains,Vegan Power Bowl,"Quinoa bowl with roasted vegetables, avocado, chickpeas, and tahini dressing.","Quinoa, vegetables, avocado, chickpeas, tahini",Regular,11.00,https://example.com/images/vegan-bowl.jpg,true,false
+Desserts,Chocolate Lava Cake,"Warm chocolate cake with a gooey center, served with vanilla ice cream.","Chocolate, flour, sugar, eggs, butter, ice cream",Regular,6.50,https://example.com/images/lava-cake.jpg,true,false
+Drinks,Mango Lemonade,"Fresh mango lemonade served over ice with mint.","Mango, lemon, water, sugar, mint",Regular,3.75,https://example.com/images/mango-lemonade.jpg,true,false
