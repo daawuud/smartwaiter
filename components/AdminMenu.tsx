@@ -11,6 +11,8 @@ const links = [
   { href: '/tables', label: 'Tables' },
   { href: '/tables/qr', label: 'QR export' },
   { href: '/tables/export/csv', label: 'CSV export' },
+];
+
 export function AdminMenu() {
   const router = useRouter();
   const supabase = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
