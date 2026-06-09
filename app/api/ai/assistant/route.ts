@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { OpenAI } from 'openai';
-import { supabaseServer } from '../../../../lib/supabaseServer';
+import { getSupabaseServer } from '../../../../lib/supabaseServer';
 import { buildAssistantPrompt } from '../../../../lib/aiPrompt';
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ answer: 'Please ask a menu question.' }, { status: 400 });
   }
 
+  const supabaseServer = getSupabaseServer();
   const [{ data: categories }, { data: items }, { data: table }, { data: restaurant }] = await Promise.all([
     supabaseServer.from('menu_categories').select('id,name').order('sort_order', { ascending: true }),
     supabaseServer.from('menu_items').select('*').order('name', { ascending: true }),

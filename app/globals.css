@@ -35,7 +35,7 @@ a {
     box-shadow: none !important;
   }
   * {
-    color-adjust: exact;
+    print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
     -webkit-text-size-adjust: 100%;
   }

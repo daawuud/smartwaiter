@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseServer } from '../../../lib/supabaseServer';
+import { getSupabaseServer } from '../../../lib/supabaseServer';
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
@@ -11,6 +11,7 @@ export async function POST(request: NextRequest) {
 
   const total = order_items.reduce((sum: number, item: any) => sum + Number(item.price || 0) * Number(item.quantity || 0), 0);
 
+  const supabaseServer = getSupabaseServer();
   const { data: order, error: orderError } = await supabaseServer.from('orders').insert({
     table_id,
     customer_name,
